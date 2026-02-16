@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosa Shop – Compra o Comparte. Gana con cada venta.</title>
+    <meta name="description"
+        content="En Kiosa Shop puedes comprar productos increíbles o ganar dinero compartiendo links y cobrando comisión fija por cada venta. Sin inversión, sin riesgos.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+</head>
+
+<body>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img class="logo-img" src="logo.svg" alt="Kiosa Shop Logo">
+                <span>Kiosa</span>
+                <span>Shop</span>
+            </a>
+
+            <div class="navbar-nav" id="navbarNav">
+                <a href="#how-it-works">¿Cómo funciona?</a>
+                <a href="#products">Productos</a>
+                <a href="#affiliate">Afiliados</a>
+                <a href="#benefits">Beneficios</a>
+            </div>
+
+            <div class="navbar-cta">
+                <a href="#cta-final" class="btn btn-primary btn-sm">Crear cuenta gratis</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="hero-grid-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    Plataforma activa · +2,500 afiliados
+                </div>
+
+                <h1 class="hero-title">
+                    Compra o comparte.<br>
+                    <span class="highlight-yellow">Gana</span> con cada
+                    <span class="highlight-cyan">venta.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    En Kiosa Shop puedes comprar productos increíbles o ganar dinero
+                    compartiendo links y cobrando <strong>comisión fija</strong> por cada venta.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#cta-final" class="btn btn-primary btn-lg" id="cta-hero-earn">
+                        🟡 Empezar a ganar
+                    </a>
+                    <a href="#products" class="btn btn-secondary btn-lg" id="cta-hero-products">
+                        🔵 Ver productos
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-count="2500">0</div>
+                        <div class="hero-stat-label">Afiliados activos</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-count="15400">0</div>
+                        <div class="hero-stat-label">Ventas realizadas</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-count="98">0%</div>
+                        <div class="hero-stat-label">Pagos completados</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual – CSS Phone Mockup -->
+            <div class="hero-visual">
+                <div class="hero-visual-wrapper">
+                    <div class="hero-phone">
+                        <div class="hero-phone-screen">
+                            <div class="phone-header">🛍️ Kiosa Shop</div>
+
+                            <div class="phone-product-card">
+                                <div class="phone-product-img">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path
+                                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                    </svg>
+                                </div>
+                                <div class="phone-product-info">
+                                    <div class="phone-product-name">Curso Marketing Digital</div>
+                                    <div class="phone-product-price">$49.99 USD</div>
+                                    <div class="phone-product-earn">💰 Ganas: $12.00</div>
+                                </div>
+                            </div>
+
+                            <div class="phone-product-card">
+                                <div class="phone-product-img"
+                                    style="background: linear-gradient(135deg, rgba(250,204,21,0.12), rgba(6,182,212,0.05));">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path
+                                            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
+                                </div>
+                                <div class="phone-product-info">
+                                    <div class="phone-product-name">Auriculares Pro Max</div>
+                                    <div class="phone-product-price">$89.99 USD</div>
+                                    <div class="phone-product-earn">💰 Ganas: $18.00</div>
+                                </div>
+                            </div>
+
+                            <div class="phone-share-btn">📤 Compartir y ganar</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating cards -->
+                    <div class="float-card float-card-1">
+                        <div class="fc-icon yellow">💰</div>
+                        <div class="fc-title">+$18.00</div>
+                        <div class="fc-value">Comisión ganada</div>
+                    </div>
+
+                    <div class="float-card float-card-2">
+                        <div class="fc-icon cyan">🔗</div>
+                        <div class="fc-title">Link copiado</div>
+                        <div class="fc-value">Listo para compartir</div>
+                    </div>
+
+                    <div class="float-card float-card-3">
+                        <div class="fc-icon green">✅</div>
+                        <div class="fc-title">Venta realizada</div>
+                        <div class="fc-value">Hace 2 minutos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label mx-auto">💸 ¿Cómo ganas?</div>
+                <h2 class="section-title">Ganar dinero nunca fue<br><span class="text-gradient-cyan">tan fácil</span>
+                </h2>
+                <p class="section-subtitle mx-auto">Solo necesitas 4 pasos para empezar a generar ingresos con Kiosa
+                    Shop.</p>
+            </div>
+
+            <div class="how-grid">
+                <div class="how-card reveal">
+                    <div class="how-card-step">1</div>
+                    <div class="how-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                    </div>
+                    <h3 class="how-card-title">Regístrate gratis</h3>
+                    <p class="how-card-desc">Crea tu cuenta en segundos. Sin costos, sin tarjeta, sin complicaciones.
+                    </p>
+                </div>
+
+                <div class="how-card reveal">
+                    <div class="how-card-step">2</div>
+                    <div class="how-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="how-card-title">Elige un producto</h3>
+                    <p class="how-card-desc">Explora nuestro catálogo y selecciona los productos que quieras promover.
+                    </p>
+                </div>
+
+                <div class="how-card reveal">
+                    <div class="how-card-step">3</div>
+                    <div class="how-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+                        </svg>
+                    </div>
+                    <h3 class="how-card-title">Comparte tu link</h3>
+                    <p class="how-card-desc">Obtén tu link único y compártelo en redes, WhatsApp, o donde quieras.</p>
+                </div>
+
+                <div class="how-card reveal">
+                    <div class="how-card-step">4</div>
+                    <div class="how-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="how-card-title">Gana dinero</h3>
+                    <p class="how-card-desc">Por cada venta que se realice con tu link, recibe una comisión fija
+                        directa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label mx-auto">🛍️ Productos Destacados</div>
+                <h2 class="section-title">Productos que <span class="text-gradient-yellow">venden solos</span></h2>
+                <p class="section-subtitle mx-auto">Cada producto tiene una ganancia fija visible. Compra para ti o
+                    comparte y gana.</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card reveal">
+                    <div class="product-card-img">
+                        <div class="product-visual v1">📘</div>
+                        <div class="product-earn-badge">💰 Gana $12.00</div>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-category">Digital</div>
+                        <h3 class="product-card-name">Curso de Marketing Digital</h3>
+                        <p class="product-card-desc">Aprende a crear campañas exitosas desde cero con estrategias
+                            probadas.</p>
+                        <div class="product-card-footer">
+                            <div class="product-price">$49.99</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm">Comprar</button>
+                                <button class="btn btn-secondary btn-sm">Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card reveal">
+                    <div class="product-card-img">
+                        <div class="product-visual v2">🎧</div>
+                        <div class="product-earn-badge">💰 Gana $18.00</div>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-category">Físico</div>
+                        <h3 class="product-card-name">Auriculares Pro Max</h3>
+                        <p class="product-card-desc">Sonido envolvente con cancelación de ruido. Diseño premium y
+                            batería de 40h.</p>
+                        <div class="product-card-footer">
+                            <div class="product-price">$89.99</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm">Comprar</button>
+                                <button class="btn btn-secondary btn-sm">Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card reveal">
+                    <div class="product-card-img">
+                        <div class="product-visual v3">📊</div>
+                        <div class="product-earn-badge">💰 Gana $8.00</div>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-category">Digital</div>
+                        <h3 class="product-card-name">Plantillas de Excel Pro</h3>
+                        <p class="product-card-desc">Pack de 50+ plantillas profesionales para finanzas, ventas y
+                            productividad.</p>
+                        <div class="product-card-footer">
+                            <div class="product-price">$29.99</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm">Comprar</button>
+                                <button class="btn btn-secondary btn-sm">Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card reveal">
+                    <div class="product-card-img">
+                        <div class="product-visual v4">⌚</div>
+                        <div class="product-earn-badge">💰 Gana $25.00</div>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-category">Físico</div>
+                        <h3 class="product-card-name">Smartwatch Ultra Fit</h3>
+                        <p class="product-card-desc">Monitor de salud, GPS integrado, notificaciones inteligentes y
+                            diseño elegante.</p>
+                        <div class="product-card-footer">
+                            <div class="product-price">$129.99</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm">Comprar</button>
+                                <button class="btn btn-secondary btn-sm">Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card reveal">
+                    <div class="product-card-img">
+                        <div class="product-visual v5">🎨</div>
+                        <div class="product-earn-badge">💰 Gana $15.00</div>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-category">Digital</div>
+                        <h3 class="product-card-name">Pack de Diseño Canva</h3>
+                        <p class="product-card-desc">200+ templates editables para redes sociales, presentaciones y más.
+                        </p>
+                        <div class="product-card-footer">
+                            <div class="product-price">$59.99</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm">Comprar</button>
+                                <button class="btn btn-secondary btn-sm">Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card reveal">
+                    <div class="product-card-img">
+                        <div class="product-visual v6">💻</div>
+                        <div class="product-earn-badge">💰 Gana $30.00</div>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-category">Físico</div>
+                        <h3 class="product-card-name">Teclado Mecánico RGB</h3>
+                        <p class="product-card-desc">Switches táctiles, retroiluminación RGB personalizable, diseño
+                            ergonómico.</p>
+                        <div class="product-card-footer">
+                            <div class="product-price">$149.99</div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm">Comprar</button>
+                                <button class="btn btn-secondary btn-sm">Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AFFILIATE SECTION ===== -->
+    <section class="section affiliate" id="affiliate">
+        <div class="container">
+            <div class="affiliate-info">
+                <div class="section-label">🔗 Sistema de Afiliados</div>
+                <h2 class="section-title">Gana dinero<br><span class="text-gradient-yellow">sin complicarte</span></h2>
+                <p class="section-subtitle">Obtén tu link personal, compártelo donde quieras y cobra por cada venta. Así
+                    de simple.</p>
+
+                <div class="affiliate-features">
+                    <div class="affiliate-feature reveal">
+                        <div class="affiliate-feature-icon cyan-bg">🚫</div>
+                        <div class="affiliate-feature-text">
+                            <h4>Sin inversión</h4>
+                            <p>No necesitas poner ni un centavo. Registrarte y promocionar es 100% gratuito.</p>
+                        </div>
+                    </div>
+
+                    <div class="affiliate-feature reveal">
+                        <div class="affiliate-feature-icon yellow-bg">🛡️</div>
+                        <div class="affiliate-feature-text">
+                            <h4>Sin riesgos</h4>
+                            <p>No manejas inventario, no haces envíos. Solo compartes y cobras.</p>
+                        </div>
+                    </div>
+
+                    <div class="affiliate-feature reveal">
+                        <div class="affiliate-feature-icon green-bg">🔗</div>
+                        <div class="affiliate-feature-text">
+                            <h4>Link personal único</h4>
+                            <p>Cada venta que se haga desde tu link se rastrea automáticamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="affiliate-feature reveal">
+                        <div class="affiliate-feature-icon cyan-bg">💳</div>
+                        <div class="affiliate-feature-text">
+                            <h4>Pagos claros y rápidos</h4>
+                            <p>Recibe tus ganancias directamente en tu cuenta. Sin letra chica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 36px;">
+                    <a href="#cta-final" class="btn btn-primary btn-lg">👉 Quiero ganar dinero compartiendo</a>
+                </div>
+            </div>
+
+            <!-- Affiliate Visual Card -->
+            <div class="affiliate-visual reveal">
+                <div class="affiliate-visual-card">
+                    <div class="av-header">
+                        <div class="av-avatar">MR</div>
+                        <div>
+                            <div class="av-name">María Rodríguez</div>
+                            <div class="av-role">Afiliada desde hace 3 meses</div>
+                        </div>
+                    </div>
+
+                    <div class="av-stats">
+                        <div class="av-stat">
+                            <div class="av-stat-value cyan">47</div>
+                            <div class="av-stat-label">Ventas este mes</div>
+                        </div>
+                        <div class="av-stat">
+                            <div class="av-stat-value yellow">$752</div>
+                            <div class="av-stat-label">Ganancia total</div>
+                        </div>
+                    </div>
+
+                    <div class="av-link-box">
+                        <code>kiosa.shop/ref/maria-r</code>
+                        <button class="copy-btn" id="copyLinkBtn">Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFITS SECTION ===== -->
+    <section class="section benefits" id="benefits">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label mx-auto">✨ Beneficios</div>
+                <h2 class="section-title">Todo lo que necesitas,<br><span class="text-gradient-cyan">en un solo
+                        lugar</span></h2>
+                <p class="section-subtitle mx-auto">Kiosa Shop te da las herramientas para comprar o generar ingresos.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon cyan">💰</div>
+                    <h3>Gana dinero compartiendo</h3>
+                    <p>Comparte productos con tu link personal y recibe una comisión fija por cada venta que se realice.
+                    </p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon yellow">📱</div>
+                    <h3>Productos digitales</h3>
+                    <p>Cursos, plantillas, ebooks y herramientas digitales de alta calidad listos para descargar.</p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon green">📦</div>
+                    <h3>Productos físicos</h3>
+                    <p>Tecnología, gadgets y productos premium con envío directo al comprador.</p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon purple">🔒</div>
+                    <h3>Pagos seguros</h3>
+                    <p>Procesamos todos los pagos con encriptación de nivel bancario. Tu dinero está protegido.</p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon orange">📊</div>
+                    <h3>Control de ganancias</h3>
+                    <p>Panel de control en tiempo real para monitorear tus ventas, clics y ganancias acumuladas.</p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon pink">👥</div>
+                    <h3>Comunidad activa</h3>
+                    <p>Únete a miles de afiliados que ya están generando ingresos. Soporte y motivación constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="section social-proof" id="social-proof">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label mx-auto">📊 Prueba Social</div>
+                <h2 class="section-title">Números que <span class="text-gradient-yellow">hablan solos</span></h2>
+                <p class="section-subtitle mx-auto">Miles de personas ya confían en Kiosa Shop para comprar y generar
+                    ingresos.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-card-icon">👥</div>
+                    <div class="stat-card-value" data-count="2500">0</div>
+                    <div class="stat-card-label">Afiliados activos</div>
+                </div>
+
+                <div class="stat-card reveal">
+                    <div class="stat-card-icon">🛒</div>
+                    <div class="stat-card-value" data-count="15400">0</div>
+                    <div class="stat-card-label">Ventas realizadas</div>
+                </div>
+
+                <div class="stat-card reveal">
+                    <div class="stat-card-icon">✅</div>
+                    <div class="stat-card-value" data-count="98" data-suffix="%">0</div>
+                    <div class="stat-card-label">Pagos completados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="section cta-final" id="cta-final">
+        <div class="cta-final-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="cta-final-content">
+                <div class="section-label mx-auto">🚀 Empieza ahora</div>
+                <h2 class="cta-final-title">
+                    No solo compres.<br>
+                    <span class="text-gradient-yellow">Convierte cada recomendación</span><br>
+                    en <span class="text-gradient-cyan">dinero.</span>
+                </h2>
+                <p class="cta-final-subtitle">
+                    Regístrate hoy, elige tus productos favoritos y comienza a ganar
+                    dinero compartiéndolos con el mundo. Sin inversión, sin riesgos.
+                </p>
+                <a href="#" class="btn btn-primary btn-lg" id="cta-final-btn">
+                    🟡 Crear cuenta gratis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="navbar-brand">
+                        <img class="logo-img"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='58' fill='%23E8F5FD' stroke='url(%23g1)' stroke-width='3'/%3E%3Cellipse cx='60' cy='56' rx='32' ry='35' fill='%23E8B88A'/%3E%3Cpath d='M30 50C30 30 90 30 90 50L88 55C88 38 32 38 32 55Z' fill='%231A1A1A'/%3E%3Cpath d='M28 56C28 52 30 48 32 50L32 60C30 58 28 58 28 56Z' fill='%231A1A1A'/%3E%3Cpath d='M92 56C92 52 90 48 88 50L88 60C90 58 92 58 92 56Z' fill='%231A1A1A'/%3E%3Cpath d='M27 46C27 28 93 28 93 46L90 48C90 35 30 35 30 48Z' fill='%23B8C4D0'/%3E%3Crect x='27' y='44' width='66' height='6' rx='3' fill='%23A0ADB8'/%3E%3Cpath d='M45 44C45 40 33 38 26 44' stroke='%23A0ADB8' stroke-width='4' fill='%23B8C4D0' stroke-linecap='round'/%3E%3Cellipse cx='30' cy='56' rx='5' ry='7' fill='%23E8B88A'/%3E%3Cellipse cx='90' cy='56' rx='5' ry='7' fill='%23E8B88A'/%3E%3Crect x='38' y='50' width='18' height='14' rx='4' fill='none' stroke='%23F0E6D8' stroke-width='2.5'/%3E%3Crect x='64' y='50' width='18' height='14' rx='4' fill='none' stroke='%23F0E6D8' stroke-width='2.5'/%3E%3Cline x1='56' y1='56' x2='64' y2='56' stroke='%23F0E6D8' stroke-width='2'/%3E%3Cline x1='38' y1='56' x2='32' y2='54' stroke='%23F0E6D8' stroke-width='2'/%3E%3Cline x1='82' y1='56' x2='88' y2='54' stroke='%23F0E6D8' stroke-width='2'/%3E%3Ccircle cx='47' cy='57' r='3' fill='%232D1B0E'/%3E%3Ccircle cx='73' cy='57' r='3' fill='%232D1B0E'/%3E%3Ccircle cx='48' cy='56' r='1' fill='white'/%3E%3Ccircle cx='74' cy='56' r='1' fill='white'/%3E%3Cpath d='M40 48Q47 44 54 48' stroke='%231A1A1A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M66 48Q73 44 80 48' stroke='%231A1A1A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M58 62Q60 66 62 62' stroke='%23D4956E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M45 72Q60 84 75 72' stroke='%231A1A1A' stroke-width='2' fill='%23FF6B6B' stroke-linecap='round'/%3E%3Cpath d='M48 72L72 72Q60 78 48 72' fill='white'/%3E%3Cpath d='M32 88C32 80 40 78 60 78C80 78 88 80 88 88L92 105C92 110 28 110 28 105Z' fill='%232196F3'/%3E%3Cpath d='M48 78L52 95L60 100L68 95L72 78' fill='%23ECEFF1'/%3E%3Cpath d='M50 78Q60 82 70 78' stroke='%23BDBDBD' stroke-width='1' fill='none'/%3E%3Cline x1='55' y1='84' x2='54' y2='92' stroke='%23BDBDBD' stroke-width='1'/%3E%3Cline x1='65' y1='84' x2='66' y2='92' stroke='%23BDBDBD' stroke-width='1'/%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='120' y2='120'%3E%3Cstop offset='0%25' stop-color='%230698BE'/%3E%3Cstop offset='100%25' stop-color='%23FFC107'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"
+                            alt="Kiosa Shop Logo">
+                        <span>Kiosa</span>
+                        <span>Shop</span>
+                    </a>
+                    <p>Compra productos increíbles o gana dinero compartiéndolos. La plataforma que te paga por
+                        recomendar.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Plataforma</h4>
+                    <ul>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#affiliate">Afiliados</a></li>
+                        <li><a href="#how-it-works">¿Cómo funciona?</a></li>
+                        <li><a href="#benefits">Beneficios</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Estado del servicio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Términos de uso</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                        <li><a href="#">Reembolsos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kiosa Shop. Todos los derechos reservados.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="TikTok">🎵</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
