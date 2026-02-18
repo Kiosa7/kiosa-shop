@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
     initTiltEffects(); // Added Tilt effect here
     initCookieConsent();
+    initBackToTop();
 });
 
 /* =============================================
@@ -542,5 +543,44 @@ function initCookieConsent() {
 
         window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: { type } }));
     }
+}
+
+/* =============================================
+   BACK TO TOP LOGIC
+   ============================================= */
+function initBackToTop() {
+    // Create button dynamically if it doesn't exist
+    let backToTop = document.getElementById('backToTop');
+    if (!backToTop) {
+        backToTop = document.createElement('button');
+        backToTop.id = 'backToTop';
+        backToTop.className = 'back-to-top';
+        backToTop.setAttribute('aria-label', 'Volver arriba');
+        backToTop.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        `;
+        document.body.appendChild(backToTop);
+    }
+
+    window.addEventListener('scroll', () => {
+        // Show when scrolled more than 50% of the page
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+
+        if (scrolled > scrollHeight / 2) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 }
 
