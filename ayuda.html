@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda – Kiosa Shop</title>
+    <meta name="description" content="Centro de ayuda y soporte técnico de Kiosa Shop.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+    <style>
+        .support-content {
+            padding: 160px 0 100px;
+            background: var(--bg-primary);
+            min-height: 80vh;
+        }
+
+        .support-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .support-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--primary-400);
+        }
+
+        .support-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .support-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .support-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .support-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .support-header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .support-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .support-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img class="logo-img" src="logo.svg" alt="Kiosa Shop Logo">
+                <span>Kiosa</span>
+                <span>Shop</span>
+            </a>
+
+            <div class="navbar-nav" id="navbarNav">
+                <a href="index.html#how-it-works">¿Cómo funciona?</a>
+                <a href="index.html#products">Productos</a>
+                <a href="index.html#affiliate">Afiliados</a>
+                <a href="index.html#benefits">Beneficios</a>
+            </div>
+
+            <div class="navbar-cta">
+                <a href="index.html#cta-final" class="btn btn-primary btn-sm">Crear cuenta gratis</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="support-content">
+        <div class="support-container">
+            <div class="support-header reveal">
+                <h1>¿Cómo podemos ayudarte?</h1>
+                <p>Encuentra respuestas rápidas, guías útiles y el soporte que necesitas para crecer con Kiosa Shop.</p>
+            </div>
+
+            <div class="support-grid">
+                <div class="support-card reveal" style="transition-delay: 0.1s;">
+                    <span class="icon">❓</span>
+                    <h3>Preguntas Frecuentes</h3>
+                    <p>Respuestas inmediatas a las dudas más comunes sobre pagos, afiliados y envíos.</p>
+                    <a href="faq.html" class="btn btn-secondary btn-sm">Ir a FAQ</a>
+                </div>
+
+                <div class="support-card reveal" style="transition-delay: 0.2s;">
+                    <span class="icon">✉️</span>
+                    <h3>Contacto</h3>
+                    <p>¿No encuentras lo que buscas? Nuestro equipo está listo para atenderte personalmente.</p>
+                    <a href="contacto.html" class="btn btn-primary btn-sm">Contactar</a>
+                </div>
+
+                <div class="support-card reveal" style="transition-delay: 0.3s;">
+                    <span class="icon">📊</span>
+                    <h3>Estado del Servicio</h3>
+                    <p>Consulta en tiempo real el estado de nuestros sistemas y conexiones.</p>
+                    <a href="estado.html" class="btn btn-secondary btn-sm">Ver Estado</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="navbar-brand">
+                        <img class="logo-img" src="logo.svg" alt="Kiosa Shop Logo">
+                        <span>Kiosa</span>
+                        <span>Shop</span>
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="ayuda.html">Centro de ayuda</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="estado.html">Estado del servicio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" id="footer-legal-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="uso.html">Términos de uso</a></li>
+                        <li><a href="terminos.html">Condiciones de servicio</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Política de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kiosa Shop. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

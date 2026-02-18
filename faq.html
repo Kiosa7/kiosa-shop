@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes (FAQ) – Kiosa Shop</title>
+    <meta name="description" content="Preguntas frecuentes sobre Kiosa Shop y su sistema de afiliados.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+    <style>
+        .faq-content {
+            padding: 160px 0 100px;
+            background: var(--bg-primary);
+            min-height: 80vh;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-400);
+            box-shadow: var(--shadow-card);
+        }
+
+        .faq-question {
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 24px;
+            max-height: 500px;
+        }
+
+        .faq-question::after {
+            content: '＋';
+            font-size: 1.2rem;
+            color: var(--primary-500);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '－';
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .faq-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img class="logo-img" src="logo.svg" alt="Kiosa Shop Logo">
+                <span>Kiosa</span>
+                <span>Shop</span>
+            </a>
+
+            <div class="navbar-nav" id="navbarNav">
+                <a href="index.html#how-it-works">¿Cómo funciona?</a>
+                <a href="index.html#products">Productos</a>
+                <a href="index.html#affiliate">Afiliados</a>
+                <a href="index.html#benefits">Beneficios</a>
+            </div>
+
+            <div class="navbar-cta">
+                <a href="index.html#cta-final" class="btn btn-primary btn-sm">Crear cuenta gratis</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="faq-content">
+        <div class="faq-container">
+            <div class="faq-header reveal">
+                <h1>Dudas resueltas</h1>
+                <p>Todo lo que necesitas saber para empezar a comprar y ganar dinero hoy mismo.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item reveal active">
+                    <div class="faq-question">¿Cómo me registro como afiliado?</div>
+                    <div class="faq-answer">
+                        Puedes registrarte gratis haciendo clic en el botón "Crear cuenta gratis" en la parte superior.
+                        Una vez dentro de tu panel, podrás generar tus enlaces de afiliado inmediatamente.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">¿Cuánto dinero puedo ganar?</div>
+                    <div class="faq-answer">
+                        No hay límite. Ganas una comisión por cada venta confirmada. Mientras más compartas tus enlaces
+                        y más personas compren, mayores serán tus ingresos mensuales.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">¿Cuándo recibo mis pagos?</div>
+                    <div class="faq-answer">
+                        Los pagos se procesan mensualmente una vez alcances el saldo mínimo de retiro. Puedes configurar
+                        tu método de pago preferido desde el panel de control.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">¿Los productos tienen garantía?</div>
+                    <div class="faq-answer">
+                        Sí, todos los productos en Kiosa Shop cuentan con garantía de satisfacción y política de
+                        devoluciones protegida por nuestros términos comerciales.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="navbar-brand">
+                        <img class="logo-img" src="logo.svg" alt="Kiosa Shop Logo">
+                        <span>Kiosa</span>
+                        <span>Shop</span>
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="ayuda.html">Centro de ayuda</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="estado.html">Estado del servicio</a></li>
+                    </ul>
+                </div>
+                <!-- ... -->
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="uso.html">Términos de uso</a></li>
+                        <li><a href="terminos.html">Condiciones de servicio</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Política de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kiosa Shop. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
