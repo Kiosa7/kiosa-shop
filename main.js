@@ -148,6 +148,15 @@ function initMobileMenu() {
     const nav = document.getElementById('navbarNav');
     if (!toggle || !nav) return;
 
+    // Add mobile CTA if missing
+    if (!nav.querySelector('.mobile-nav-cta')) {
+        const mobileCTA = document.createElement('a');
+        mobileCTA.href = 'index.html#cta-final';
+        mobileCTA.className = 'mobile-nav-cta';
+        mobileCTA.textContent = 'Crear cuenta gratis';
+        nav.appendChild(mobileCTA);
+    }
+
     toggle.addEventListener('click', () => {
         nav.classList.toggle('active');
         toggle.classList.toggle('active');
