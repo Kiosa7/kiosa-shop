@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initButtonEffects();
     initCarousel();
     initTiltEffects(); // Added Tilt effect here
+    initCookieConsent();
 });
 
 /* =============================================
@@ -477,5 +478,69 @@ function initCarousel() {
         if (e.key === 'ArrowLeft') prevSlide();
         if (e.key === 'ArrowRight') nextSlide();
     });
+}
+
+/* =============================================
+   COOKIE CONSENT LOGIC
+   ============================================= */
+function initCookieConsent() {
+    // Check if user already accepted
+    const hasConsented = localStorage.getItem('kiosa_cookie_consent');
+    if (hasConsented) return;
+
+    // Create bar if it doesn't exist
+    let cookieBar = document.getElementById('cookie-consent');
+    if (!cookieBar) {
+        cookieBar = document.createElement('div');
+        cookieBar.id = 'cookie-consent';
+        cookieBar.className = 'cookie-bar';
+        cookieBar.innerHTML = `
+            <div class="container">
+                <div class="cookie-content">
+                    <div class="cookie-text">
+                        <span class="cookie-icon">🍪</span>
+                        <p>Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="cookies.html">política de cookies</a>.</p>
+                    </div>
+                    <div class="cookie-actions">
+                        <button class="btn btn-secondary btn-sm" id="cookie-settings">Configurar</button>
+                        <button class="btn btn-primary btn-sm" id="cookie-accept">Aceptar todo</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(cookieBar);
+    }
+
+    const acceptBtn = document.getElementById('cookie-accept');
+    const settingsBtn = document.getElementById('cookie-settings');
+
+    if (!acceptBtn) return;
+
+    // Show bar with a slight delay for better UX
+    setTimeout(() => {
+        cookieBar.classList.add('active');
+    }, 2000);
+
+    acceptBtn.addEventListener('click', () => {
+        saveConsent('all');
+    });
+
+    if (settingsBtn) {
+        settingsBtn.addEventListener('click', () => {
+            saveConsent('custom');
+        });
+    }
+
+    function saveConsent(type) {
+        localStorage.setItem('kiosa_cookie_consent', type);
+        cookieBar.classList.remove('active');
+
+        // Remove from DOM after transition
+        setTimeout(() => {
+            cookieBar.remove();
+        }, 800);
+
+        window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: { type } }));
+    }
 }
 
