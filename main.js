@@ -25,7 +25,8 @@ function initParticles() {
     const ctx = canvas.getContext('2d');
 
     let width, height, particles;
-    const PARTICLE_COUNT = 60;
+    const isMobile = window.innerWidth < 768;
+    const PARTICLE_COUNT = isMobile ? 35 : 60;
     const CONNECTION_DISTANCE = 140;
     const COLORS = [
         'rgba(6,152,190,0.25)',
@@ -367,6 +368,9 @@ function initButtonEffects() {
    PRODUCT CARD TILT EFFECT
    ============================================= */
 function initTiltEffects() {
+    // Disable tilt on touch devices for better mobile UX
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
     const cards = document.querySelectorAll('.product-card, .benefit-card');
 
     cards.forEach(card => {
