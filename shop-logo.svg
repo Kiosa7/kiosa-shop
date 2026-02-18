@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
   <defs>
     <!-- Premium Brand Gradient: Cyan to Yellow -->
-    <linearGradient id="footerShopGradientCont" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="mainShopGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0698BE;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#FFC107;stop-opacity:1" />
     </linearGradient>
     
     <!-- Glass Effect Gradient -->
-    <linearGradient id="footerWindowGradientCont" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="windowGlassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#0DBFE5;stop-opacity:0.3" />
       <stop offset="100%" style="stop-color:#0698BE;stop-opacity:0.1" />
     </linearGradient>
     
     <!-- Subtle Shadow Filter -->
-    <filter id="footerSoftShadowCont" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="1.5" result="blur" />
       <feOffset dx="0" dy="1.5" result="offsetBlur" />
       <feFlood flood-color="#1A1D2E" flood-opacity="0.15" result="offsetColor"/>
@@ -29,7 +29,7 @@
   <path d="M28 46 H92 V106 C92 108 90 110 87 110 H33 C30 110 28 108 28 106 V46Z" fill="#FFFFFF" stroke="#CBD5E0" stroke-width="1.5" />
   
   <!-- Modern Window (Glass Effect) -->
-  <path d="M62 70 H84 V94 H62 V70Z" fill="url(#footerWindowGradientCont)" stroke="rgba(6, 152, 190, 0.15)" stroke-width="1" />
+  <path d="M62 70 H84 V94 H62 V70Z" fill="url(#windowGlassGradient)" stroke="rgba(6, 152, 190, 0.15)" stroke-width="1" />
   <!-- Diagonal Reflection Shine -->
   <path d="M66 70 L84 88" stroke="white" stroke-width="1" opacity="0.4" stroke-linecap="round" />
   <path d="M74 70 L84 80" stroke="white" stroke-width="0.6" opacity="0.2" stroke-linecap="round" />
@@ -40,7 +40,7 @@
   <circle cx="48" cy="92" r="1.5" fill="#FFC107" />
 
   <!-- The "Toldo" (Awning) - Integrated Design -->
-  <path d="M16 46 L104 46 L112 24 L8 24 Z" fill="url(#footerShopGradientCont)" filter="url(#footerSoftShadowCont)" />
+  <path d="M16 46 L104 46 L112 24 L8 24 Z" fill="url(#mainShopGradient)" filter="url(#softShadow)" />
   
   <!-- Glossy Shine on Top of Awning -->
   <path d="M12 28 L108 28 L102 34 L18 34 Z" fill="white" opacity="0.1" />
