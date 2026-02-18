@@ -148,6 +148,35 @@ function initMobileMenu() {
     const nav = document.getElementById('navbarNav');
     if (!toggle || !nav) return;
 
+    // Add mobile header if missing
+    if (!nav.querySelector('.mobile-menu-header')) {
+        const header = document.createElement('div');
+        header.className = 'mobile-menu-header';
+        header.innerHTML = `
+            <a href="index.html" class="navbar-brand">
+                <img class="logo-img" src="shop-logo.svg" alt="Kiosa Shop Logo">
+                <span>Kiosa</span>
+                <span>Shop</span>
+            </a>
+        `;
+        nav.prepend(header);
+    }
+
+    // Add icons to links if they don't have them
+    const iconMap = {
+        '¿Cómo funciona?': '💡',
+        'Productos': '🛍️',
+        'Afiliados': '👥',
+        'Beneficios': '✨'
+    };
+
+    nav.querySelectorAll('a:not(.mobile-nav-cta):not(.navbar-brand)').forEach(link => {
+        const text = link.textContent.trim();
+        if (iconMap[text] && !link.querySelector('.nav-icon')) {
+            link.innerHTML = `<span class="nav-icon">${iconMap[text]}</span> <span>${text}</span>`;
+        }
+    });
+
     // Add mobile CTA if missing
     if (!nav.querySelector('.mobile-nav-cta')) {
         const mobileCTA = document.createElement('a');

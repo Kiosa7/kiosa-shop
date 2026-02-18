@@ -308,6 +308,14 @@ button {
     display: none;
 }
 
+.mobile-menu-header {
+    display: none;
+}
+
+.nav-icon {
+    display: none;
+}
+
 .navbar-nav a::after {
     content: '';
     position: absolute;
@@ -1947,34 +1955,68 @@ button {
         width: 100%;
         height: 100vh;
         height: 100dvh;
-        background: rgba(255, 255, 255, 0.94);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        padding: 80px 40px;
+        padding: 40px 20px;
         gap: 0;
         transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 999;
+        overflow-y: auto;
     }
 
     .navbar-nav.active {
         right: 0;
     }
 
+    /* Mobile Header */
+    .mobile-menu-header {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 20px 0 40px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    }
+
+    .navbar-nav.active .mobile-menu-header {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Icons */
+    .nav-icon {
+        display: inline-flex;
+        font-size: 1.4rem;
+        width: 40px;
+        height: 40px;
+        background: var(--bg-secondary);
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
     /* Links in mobile menu */
     .navbar-nav a {
         width: 100%;
-        text-align: center;
-        padding: 20px;
-        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 18px;
+        font-size: 1.25rem;
         font-family: var(--font-display);
         font-weight: 700;
         color: var(--text-primary);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03);
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(30px);
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
